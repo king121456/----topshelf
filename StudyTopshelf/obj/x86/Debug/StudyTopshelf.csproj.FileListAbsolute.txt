@@ -1,0 +1,6 @@
+D:\开发点蛋疼的东西\学习使用topshelf\StudyTopshelf\bin\Debug\StudyTopshelf.exe
+D:\开发点蛋疼的东西\学习使用topshelf\StudyTopshelf\bin\Debug\StudyTopshelf.pdb
+D:\开发点蛋疼的东西\学习使用topshelf\StudyTopshelf\bin\Debug\log4net.dll
+D:\开发点蛋疼的东西\学习使用topshelf\StudyTopshelf\bin\Debug\Topshelf.dll
+D:\开发点蛋疼的东西\学习使用topshelf\StudyTopshelf\obj\x86\Debug\StudyTopshelf.exe
+D:\开发点蛋疼的东西\学习使用topshelf\StudyTopshelf\obj\x86\Debug\StudyTopshelf.pdb
