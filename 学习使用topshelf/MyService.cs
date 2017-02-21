@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Topshelf;
-namespace StudyTopshelf
+namespace 学习使用topshelf
 {
     public class MyService:ServiceControl
     {
-        public MyService()
-        {
-
-        }
         public bool Start(HostControl hostControl)
         {
             return true;

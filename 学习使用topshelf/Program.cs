@@ -13,25 +13,65 @@ namespace 学习使用topshelf
     {
         public static void Main(string[] args)
         {
-            HostFactory.Run(r =>
-            {
-                HostFactory.Run(x =>
-                {
-                    x.Service<TownCrier>(s =>
-                    {
-                        s.ConstructUsing(name => new TownCrier());
-                        s.WhenStarted(tc => tc.Start());
-                        s.WhenStopped(tc => tc.Stop());
-                    });
-                    x.RunAsLocalSystem();
+            #region 官方案例
+            //HostFactory.Run(r =>
+            //    {
+            //        r.StartAutomatically();
+            //        HostFactory.Run(x =>
+            //        {
+            //            x.Service<TownCrier>(s =>
+            //            {
+            //                s.ConstructUsing(name => new TownCrier());
+            //                s.WhenStarted(tc => tc.Start());
+            //                s.WhenStopped(tc => tc.Stop());
+            //            });
+            //            x.RunAsLocalSystem();
 
-                    x.SetDescription("Sample Topshelf Host");
-                    x.SetDisplayName("Stuff");
-                    x.SetServiceName("Stuff");
-                    x.SetInstanceName("MyService$Test");
-                });
+            //            x.SetDescription("Sample Topshelf Host");
+            //            x.SetDisplayName("Stuff");
+            //            x.SetServiceName("Stuff");
+            //            x.SetInstanceName("MyService$Test");
+            //        });
+            //    }); 
+            #endregion
+            #region 服务基础
+            HostFactory.New(r =>
+            {
+                #region HostConfigurator设置
+                //设置服务名称
+                r.SetServiceName("HouHanBin");
+                //服务的描述信息
+                r.SetDescription("This is a Service!");
+                //指定服务的显示名称，默认为服务名称
+                r.SetDisplayName("HouHanBinService");
+                //指定实例名称
+                r.SetInstanceName("MyServices"); 
+                #endregion
+                #region Service配置
+                //简单服务
+                r.Service<MyService>();
+                #endregion
             });
-            
+            #endregion
+            #region 服务复苏
+            //HostFactory.New(x =>
+            //{
+            //    x.EnableServiceRecovery(r =>
+            //    {
+            //        //you can have up to three of these
+            //        r.RestartComputer(5, "message");
+            //        r.RestartService(0);
+            //        //the last one will act for all subsequent failures
+            //        r.RunProgram(7, "ping baidu.com");
+
+            //        //should this be true for crashed or non-zero exits
+            //        //r.OnCrashOnly();
+
+            //        //number of days until the error count resets
+            //        r.SetResetPeriod(1);
+            //    });
+            //});
+            #endregion
             
         }
     }

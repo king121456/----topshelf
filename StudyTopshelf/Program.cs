@@ -12,11 +12,26 @@ namespace StudyTopshelf
         {
             HostFactory.New(r =>
             {
+                
                 r.SetServiceName("MyService");
                 r.SetDescription("MyService");
                 r.SetDisplayName("MyService");
                 r.SetInstanceName("MyService");
-                r.Service<MyService>();
+                //r.Service<MyService>(sc =>
+                //{
+                //    sc.ConstructUsing(() => new MyService());
+
+                //    // the start and stop methods for the service
+                //    sc.WhenStarted(s => s.Start());
+                //    sc.WhenStopped(s => s.Stop());
+
+                //    // optional pause/continue methods if used
+                //    sc.WhenPaused(s => s.Pause());
+                //    sc.WhenContinued(s => s.Continue());
+
+                //    // optional, when shutdown is supported
+                //    sc.WhenShutdown(s => s.Shutdown());
+                //});
             });
         }
     }
