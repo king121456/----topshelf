@@ -10,6 +10,7 @@ namespace StudyTopshelf
         public MyService()
         {
             //测试欧共吸纳之
+            //再试试
         }
         public bool Start(HostControl hostControl)
         {
