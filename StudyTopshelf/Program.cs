@@ -12,7 +12,7 @@ namespace StudyTopshelf
         {
             HostFactory.New(r =>
             {
-                
+                //这是回滚的代码
                 r.SetServiceName("MyService");
                 r.SetDescription("MyService");
                 r.SetDisplayName("MyService");
